@@ -1,0 +1,36 @@
+﻿<div id="body">
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>Welcome to KaSim Cloud!</h1>                
+            </hgroup>
+        </div>
+    </section>
+    <section class="content-wrapper main-content clear-fix">
+        <h3>To use KaSim Cloud with the Bio-Sims web UI framework:</h3>
+        <ol class="round">
+            <li class="one">                
+                @{
+                    var baseURL = "http://" + Request.Headers.GetValues("Host").FirstOrDefault();
+                    var simDefURL = baseURL + @"/api/kasimcloud/json";
+                    var simDefURLEncoded = HttpUtility.UrlEncode(simDefURL);                    
+                    var bioSimsURL = "http://localhost:7065";
+                    var bioSimsURLWithParams = bioSimsURL + "?simulatorDefURL=" + simDefURLEncoded;
+                }                
+                <h5>Add simulator plugin</h5>                
+                Simply click <a href="@bioSimsURLWithParams">here</a> to automatically add the KaSim Cloud
+                simulator. <br />
+                Alternatively, go to <a href="@bioSimsURL">Bio-Sims</a> and add your KaSim Cloud server URL manually: <a href="@simDefURL">@simDefURL</a>.
+            </li>
+
+            <li class="two">
+                <h5>Model</h5>  
+                Write your KaSim model in the editor to the left of the Bio-Sims tool, or play with the example model.
+            </li>
+            <li class="three">
+                <h5>Simulate</h5>
+                Press the "Simulate" button towards the bottom right of the Bio-Sims tool. Your KaSim Cloud server will then start working.
+            </li>
+        </ol>
+    </section>
+</div>
