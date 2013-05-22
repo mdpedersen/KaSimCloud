@@ -2,5 +2,8 @@ csx/
 bin/
 obj/
 rcf/
-!\bin\Release\app.publish\KaSimCloud.cspkg
-!ServiceConfiguration.Cloud.cscfg
+
+# we'd like to whitelist the following, but the ! syntax doesn't seem to work as document in the git manual. 
+# instead use "git add -f" )-: 
+!bin/Release/app.publish/KaSimCloud.cspkg
+!bin/Release/app.publish/ServiceConfiguration.Cloud.cscfg
