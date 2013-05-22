@@ -2,3 +2,5 @@ csx/
 bin/
 obj/
 rcf/
+!\KappaCloud\bin\Release\app.publish\KaSimCloud.cspkg
+!\KappaCloud\bin\Release\app.publish\ServiceConfiguration.Cloud.cscfg
